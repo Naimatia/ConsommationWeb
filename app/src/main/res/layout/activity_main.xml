@@ -21,6 +21,14 @@
         android:layout_below="@id/parseBtn"
         android:text="Save User"
         android:layout_marginTop="16dp" />
+    <Button
+        android:id="@+id/buttonShowDetails"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/buttonSave"
+        android:text="Show User Details"
+        android:layout_marginTop="16dp" />
+
 
     <TextView
         android:id="@+id/TextArea"

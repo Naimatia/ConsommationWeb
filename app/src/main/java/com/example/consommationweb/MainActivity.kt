@@ -59,6 +59,26 @@ private lateinit var textView: TextView
                 Toast.makeText(this, "No user selected", Toast.LENGTH_SHORT).show()
             }
         }
+        // Dans votre fonction onCreate
+        val buttonShowDetails: Button = findViewById(R.id.buttonShowDetails)
+
+        buttonShowDetails.setOnClickListener {
+            val sharedPreferences = getSharedPreferences("MyPrefs", Context.MODE_PRIVATE)
+            val userName = sharedPreferences.getString("name", "")
+            val userUsername = sharedPreferences.getString("username", "")
+            val userEmail = sharedPreferences.getString("email", "")
+
+            if (userName != null && userUsername != null && userEmail != null) {
+                val userDetails = "Name: $userName\nUsername: $userUsername\nEmail: $userEmail"
+                // Affichez les détails de l'utilisateur dans un TextView ou tout autre élément de l'interface utilisateur.
+                textView.text = userDetails
+            } else {
+                Toast.makeText(this, "User details not found", Toast.LENGTH_SHORT).show()
+            }
+        }
+
+
+
     }
     override fun onUserSelected(userSelected: Boolean) {
         buttonSave.isEnabled = userSelected
